@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联名抢购攻略卡 · 麦当劳 × PEACEMINUSONE</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #FDF2E9;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  display: flex; justify-content: center; padding: 28px 12px;
+}
+.card {
+  width: 420px; background: #FFFBF5; border-radius: 28px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(230, 100, 60, 0.16);
+  border: 1px solid rgba(230, 120, 80, 0.14);
+}
+.hero {
+  background: linear-gradient(135deg, #FFD9C7 0%, #FFC2AE 45%, #FFB39C 100%);
+  padding: 26px 24px 22px; position: relative;
+}
+.hero::after {
+  content: ""; position: absolute; right: -30px; top: -30px; width: 130px; height: 130px;
+  border-radius: 50%; background: rgba(255, 255, 255, 0.28);
+}
+.hero .kicker { font-size: 12px; color: #B0522E; letter-spacing: 2px; font-weight: 600; }
+.hero h1 { font-size: 25px; color: #8C3A1E; margin-top: 6px; font-weight: 800; letter-spacing: 1px; }
+.hero .slogan { font-size: 12px; color: #A85B36; margin-top: 8px; font-weight: 600; }
+.chips { display: flex; gap: 8px; padding: 16px 20px 4px; flex-wrap: wrap; }
+.chip {
+  background: #FFF1E8; border: 1px solid #FFD9C4; color: #B0522E;
+  font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+}
+.section-title {
+  font-size: 14px; font-weight: 800; color: #8C3A1E;
+  padding: 16px 20px 8px; display: flex; align-items: center; gap: 6px;
+}
+.window {
+  margin: 0 16px 10px; background: linear-gradient(135deg, #FFF3E0, #FFE3D0);
+  border-radius: 16px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;
+}
+.w-icon {
+  width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
+  background: linear-gradient(135deg, #FF8A65, #F4511E);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.w-body { flex: 1; min-width: 0; }
+.w-item { font-size: 13px; color: #4A2C1D; font-weight: 700; }
+.w-time { font-size: 11px; color: #B08872; margin-top: 3px; }
+.w-cd { text-align: right; flex-shrink: 0; }
+.w-cd .cd { font-size: 12px; font-weight: 800; color: #D84315; }
+.w-cd .adv { font-size: 10px; color: #C9A48F; margin-top: 2px; }
+.merch {
+  margin: 0 16px 10px; background: #FFFFFF; border-radius: 16px; padding: 12px 14px;
+  border: 1px solid #FFE8DC;
+}
+.m-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; }
+.m-row + .m-row { border-top: 1px dashed #FFE0D0; }
+.m-left .name { font-size: 13px; color: #4A2C1D; font-weight: 700; }
+.m-left .mech { font-size: 11px; color: #B08872; margin-top: 2px; }
+.m-right { text-align: right; }
+.m-right .price { font-size: 15px; font-weight: 800; color: #F4511E; }
+.m-right .tag { font-size: 10px; color: #fff; background: #F4511E; border-radius: 6px; padding: 1px 6px; margin-left: 4px; }
+.tips {
+  margin: 6px 16px 4px; background: #FFF8F2; border: 1px solid #FFE4D6;
+  border-radius: 16px; padding: 12px 16px;
+}
+.tip { font-size: 12px; color: #7A4A30; line-height: 1.9; }
+.tip::before { content: "🎯 "; }
+.footer { padding: 14px 20px 20px; text-align: center; }
+.footer .pb { font-size: 11px; color: #8C3A1E; font-weight: 700; line-height: 1.8; }
+.footer .src { font-size: 10px; color: #C9A48F; margin-top: 8px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="hero">
+      <div class="kicker">MCD COLLAB RADAR</div>
+      <h1>📡 麦麦联名雷达</h1>
+      <div class="slogan">联名可以冲，账要先算清</div>
+    </div>
+    <div class="chips">
+      <span class="chip">👤 薯条爱好者</span><span class="chip">🗓 2026-10-12</span>
+      <span class="chip">🤝 麦当劳 × PEACEMINUSONE</span>
+    </div>
+    <div class="section-title">⏰ 冲浪窗口</div>
+    
+      <div class="window">
+        <div class="w-icon">⏰</div>
+        <div class="w-body">
+          <div class="w-item">联名徽章（一套三枚）</div>
+          <div class="w-time">10/15 10:45 开售 · 10/15 10:40 积分抢先购</div>
+        </div>
+        <div class="w-cd">
+          <div class="cd">2 天 11 小时</div>
+          <div class="adv">倒计时</div>
+        </div>
+      </div>
+      <div class="window">
+        <div class="w-icon">⏰</div>
+        <div class="w-body">
+          <div class="w-item">限定主题丝巾</div>
+          <div class="w-time">10/22 10:45 开售 · 10/22 10:40 积分抢先购</div>
+        </div>
+        <div class="w-cd">
+          <div class="cd">9 天 11 小时</div>
+          <div class="adv">倒计时</div>
+        </div>
+      </div>
+    <div class="section-title">💰 价梯（到手价）</div>
+    <div class="merch">
+      <div class="m-row">
+        <div class="m-left">
+          <div class="name">联名徽章（一套三枚）</div>
+          <div class="mech">任意消费 +39.9</div>
+        </div>
+        <div class="m-right"><span class="price">¥61.8</span><span class="tag">最优</span></div>
+      </div>
+      <div class="m-row">
+        <div class="m-left">
+          <div class="name">限定主题丝巾</div>
+          <div class="mech">任意消费 +39.9</div>
+        </div>
+        <div class="m-right"><span class="price">¥61.8</span><span class="tag">最优</span></div>
+      </div>
+      <div class="m-row">
+        <div class="m-left">
+          <div class="name">复古棒球帽</div>
+          <div class="mech">任意消费 +39.9</div>
+        </div>
+        <div class="m-right"><span class="price">¥61.8</span></div>
+      </div>
+      <div class="m-row">
+        <div class="m-left">
+          <div class="name">随单小卡（3 款随机）</div>
+          <div class="mech">购买联名套餐随单得</div>
+        </div>
+        <div class="m-right"><span class="price">¥0</span></div>
+      </div></div>
+    <div class="section-title">📍 渠道策略</div>
+    <div class="tips"><div class="tip">首发日避开核心商圈大店（痛店排队久、售罄快）</div><div class="tip">优先查就近 3-5 家非热门门店，货量通常更充足</div><div class="tip">APP 内先确认库存再出发，部分周边仅线上有售</div></div>
+    <div class="section-title">📌 攻略要点</div>
+    <div class="tips"><div class="tip">定闹钟：开售前 5 分钟进 APP，积分用户 10:40 抢先购</div><div class="tip">提前领好券再下单，麦金卡随单再减 5 元</div><div class="tip">周边是消费品，喜欢再冲，别为凑单点多一份</div></div>
+    <div class="footer">
+      <div class="pb">由「麦麦联名雷达」生成 · 基于麦当劳中国官方 MCP 能力<br>
+      非麦当劳官方产品 · 周边为消费品，不建议囤积炒作</div>
+      <div class="src">价格与活动以官方渠道实时信息为准 · 项目地址 github.com/xuzongbao/mcd-collab-radar · 欢迎 Star ⭐</div>
+    </div>
+  </div>
+</body>
+</html>

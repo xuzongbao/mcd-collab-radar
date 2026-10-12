@@ -1,0 +1,22 @@
+# ===== 本地敏感配置（含真实 Token，严禁提交）=====
+mcp.json
+*.local.json
+.env
+.env.*
+
+# ===== 系统/编辑器 =====
+.DS_Store
+.idea/
+.vscode/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ===== Node =====
+node_modules/
+
+# ===== 本地演示输出（运行时生成，不入库；示例卡见 demo/sample-card.html）=====
+demo/out/

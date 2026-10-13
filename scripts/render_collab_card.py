@@ -226,27 +226,35 @@ def render(plan: dict) -> str:
 
 DEMO_PLAN = {
     "collab": "麦当劳 × PEACEMINUSONE",
-    "nickname": "薯条爱好者",
-    "today": "2026-10-12",
+    "nickname": "GD 追更人",
+    "today": "2026-10-13",
     "repo": "github.com/xuzongbao/mcd-collab-radar",
+    "data_source": "麦当劳中国官方 MCP（mcd-mcp）实时返回 · 门店：麦当劳南京新百餐厅 1990346 · 2026-10-13 实算（与 scripts/live_demo.py 输出一致）",
     "windows": [
-        {"item": "联名徽章（一套三枚）", "time": "10/15 10:45 开售", "advance": "10/15 10:40 积分抢先购", "countdown": "2 天 11 小时"},
-        {"item": "限定主题丝巾", "time": "10/22 10:45 开售", "advance": "10/22 10:40 积分抢先购", "countdown": "9 天 11 小时"},
+        {"item": "联名徽章（一套三枚）", "time": "10/15 10:45 开售", "advance": "10/15 10:40 积分抢先购", "countdown": "1 天 14 小时"},
+        {"item": "限定主题丝巾", "time": "10/22 10:45 开售", "advance": "10/22 10:40 积分抢先购", "countdown": "8 天 14 小时"},
+        {"item": "复古棒球帽", "time": "10/8 10:45 已开售", "advance": "积分抢先购已结束", "countdown": "进行中"},
     ],
     "merch": [
-        {"item": "联名徽章（一套三枚）", "mechanism": "任意消费 +39.9", "best_price": "¥61.8", "best": True},
-        {"item": "限定主题丝巾", "mechanism": "任意消费 +39.9", "best_price": "¥61.8", "best": True},
-        {"item": "复古棒球帽", "mechanism": "任意消费 +39.9", "best_price": "¥61.8", "best": False},
+        {"item": "联名徽章（一套三枚）", "mechanism": "圆筒冰淇淋 ¥5.00 + 换购 39.9", "best_price": "¥44.9", "best": True},
+        {"item": "限定主题丝巾", "mechanism": "圆筒冰淇淋 ¥5.00 + 换购 39.9", "best_price": "¥44.9", "best": True},
+        {"item": "复古棒球帽", "mechanism": "圆筒冰淇淋 ¥5.00 + 换购 39.9", "best_price": "¥44.9", "best": False},
         {"item": "随单小卡（3 款随机）", "mechanism": "购买联名套餐随单得", "best_price": "¥0", "best": False},
     ],
+    "price_ladder": [
+        {"path": "极限下限", "food": "北美招牌牧场酱", "food_price": "¥3.00", "total": "¥42.90", "note": "全场最低价；加购类需 APP 确认可作换购消费"},
+        {"path": "稳妥凑单", "food": "圆筒冰淇淋", "food_price": "¥5.00", "total": "¥44.90", "note": "可单独下单，已由 calculate-price 实算"},
+        {"path": "小食凑单", "food": "苹果片", "food_price": "¥7.00", "total": "¥46.90", "note": "已由 calculate-price 实算"},
+        {"path": "饱腹路径", "food": "龙焰鸡腿堡三件套", "food_price": "¥26.90", "total": "¥66.80", "note": "联名新品三件套，已实算"},
+    ],
     "channel_tips": [
-        "首发日避开核心商圈大店（痛店排队久、售罄快）",
-        "优先查就近 3-5 家非热门门店，货量通常更充足",
-        "APP 内先确认库存再出发，部分周边仅线上有售",
+        "新百餐厅 182m 为最近门店：属核心商圈，首发日排队久、售罄快，建议错峰",
+        "就近 24 小时备选：洪武餐厅 519m、汉中路餐厅 740m",
+        "APP 内先确认库存再出发；积分余额 48.6，可留意 10:40 抢先购",
     ],
     "playbook": [
-        "定闹钟：开售前 5 分钟进 APP，积分用户 10:40 抢先购",
-        "提前领好券再下单，麦金卡随单再减 5 元",
+        "定闹钟：10/15 10:40 积分抢先购，10:45 全面开售",
+        "提前把「圆筒冰淇淋」加好购物车（¥5.00），开售瞬间一键结算",
         "周边是消费品，喜欢再冲，别为凑单点多一份",
     ],
 }

@@ -6,6 +6,12 @@
 当下最典型的场景：**麦当劳 × PEACEMINUSONE（G-DRAGON）联名**——韩式新品 + 周边多弹发售（小卡 → 徽章 → 丝巾）。输入你在追的联名，它还你一张结构化情报表 + 一张可截图分享的攻略卡。
 
 🏷️ **麦当劳程序员创意开发大赛**参赛作品 · 基于麦当劳中国官方 MCP（mcd-mcp）开发 · 使用 WorkBuddy 辅助开发
+
+![参赛作品](https://img.shields.io/badge/麦当劳程序员创意开发大赛-参赛作品-DA291C?style=flat-square)
+![MCP Tools](https://img.shields.io/badge/MCP_Tools-15-DA291C?style=flat-square)
+![Python](https://img.shields.io/badge/Python-标准库零依赖-3776AB?style=flat-square&logo=python&logoColor=white)
+![离线复现](https://img.shields.io/badge/一键复现-dry--run-4CAF50?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 ⚠️ 本项目为参赛者独立开发的**非麦当劳官方产品**，输出仅供参考；周边为消费品，不建议囤积炒作。
 
 ---
@@ -22,9 +28,24 @@
 
 最后生成一张**小红书风攻略卡**，截图就能发——手慢的人，连攻略都是借来的。
 
+## 🎯 为什么不是又一个点餐 Skill
+
+点餐助手回答「今天吃什么」，我们回答完全不同的问题：
+
+| | 点餐类 Skill | 麦麦联名雷达 |
+|---|---|---|
+| 场景 | 日常用餐决策 | **限定联名抢购**（一次性、强时效、信息差最大） |
+| 输出 | 菜单/优惠券 | 三本账 + **一张能晒出去的攻略卡** |
+| 时效 | 随时 | 倒计时驱动，开售/积分抢先购窗口精确到分钟 |
+| 数据 | 菜单快照 | `calculate-price` 逐条实算 + 门店实时距离/营业状态 |
+
+且不绑死任何单次联名——以 `campaign-calendar` 为活水源，**下一个联名上线即自动纳入雷达**。
+
 ## 🔬 真实运行样例（2026-10-13 19:53 · MCP 实时数据）
 
-以下为 Skill 一次完整跑通的真实输出，全部数据来自麦当劳中国官方 MCP 实时返回，价格经 `calculate-price` 实算：
+![联名攻略卡成品](demo/sample-card.png)
+
+以上为 Skill 一次完整跑通的真实输出，全部数据来自麦当劳中国官方 MCP 实时返回，价格经 `calculate-price` 实算：
 
 **联名情报表**（`campaign-calendar` 提取）
 
@@ -146,7 +167,7 @@ Skill 会自动完成：扫雷达 → 算三本账 → 出攻略卡。
 
 ```
 mcd-collab-radar/
-├── SKILL.md                        # Skill 主体：三步工作流（扫雷→算账→出卡）
+├── SKILL.md                        # Skill 主体：三步工作流（扫雷达→算账→出卡）
 ├── references/
 │   ├── workflow.md                 # 三步工作流详解与话术
 │   ├── price-ladder.md             # 价梯计算规则（联名周边购买机制拆解）
@@ -157,6 +178,7 @@ mcd-collab-radar/
 ├── demo/
 │   ├── README.md                   # 演示目录使用说明
 │   ├── sample-card.html            # 示例攻略卡（真实数据渲染，浏览器打开即可截图）
+│   ├── sample-card.png             # 示例攻略卡截图（README 首屏同款）
 │   ├── plan.json                   # 示例攻略卡的渲染输入（真实 MCP 数据结构）
 │   └── fixtures/raw/               # 离线回放数据（真实返回录制，账户 ID 已脱敏）
 ├── MCP_INTEGRATION.md              # MCP 接入说明（Server/Tool/流程/价值）

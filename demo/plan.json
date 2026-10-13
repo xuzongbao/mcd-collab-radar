@@ -1,0 +1,34 @@
+{
+  "collab": "麦当劳 × PEACEMINUSONE",
+  "nickname": "GD 追更人",
+  "today": "2026-10-13",
+  "repo": "github.com/xuzongbao/mcd-collab-radar",
+  "data_source": "麦当劳中国官方 MCP（mcd-mcp）实时返回 · 门店：麦当劳南京新百餐厅 1990346 · 2026-10-13 19:53 实算",
+  "windows": [
+    {"item": "联名徽章（一套三枚）", "time": "10/15 10:45 开售", "advance": "10/15 10:40 积分抢先购", "countdown": "1 天 14 小时"},
+    {"item": "限定主题丝巾", "time": "10/22 10:45 开售", "advance": "10/22 10:40 积分抢先购", "countdown": "8 天 14 小时"},
+    {"item": "复古棒球帽", "time": "10/8 10:45 已开售", "advance": "积分抢先购已结束", "countdown": "进行中"}
+  ],
+  "merch": [
+    {"item": "联名徽章（一套三枚）", "mechanism": "圆筒冰淇淋 ¥5 + 换购 39.9", "best_price": "¥44.9", "best": true},
+    {"item": "限定主题丝巾", "mechanism": "派 ¥8.5 + 换购 39.9", "best_price": "¥48.4", "best": true},
+    {"item": "复古棒球帽", "mechanism": "蘸酱炸鸡 ¥11.9 + 换购 39.9", "best_price": "¥51.8", "best": false},
+    {"item": "随单小卡（3 款随机）", "mechanism": "购买联名套餐随单得", "best_price": "¥0", "best": false}
+  ],
+  "price_ladder": [
+    {"path": "极简凑单", "food": "圆筒冰淇淋", "food_price": "¥5.00", "total": "¥44.90", "note": "已由 calculate-price 实算"},
+    {"path": "小食凑单", "food": "派", "food_price": "¥8.50", "total": "¥48.40", "note": "菜单现价"},
+    {"path": "韩式新品", "food": "蘸酱炸鸡", "food_price": "¥11.90", "total": "¥51.80", "note": "GD 同款蘸酱"},
+    {"path": "饱腹路径", "food": "龙焰鸡腿堡三件套", "food_price": "¥26.90", "total": "¥66.80", "note": "已由 calculate-price 实算"}
+  ],
+  "channel_tips": [
+    "新街口属核心商圈（痛店）：首发日排队久、售罄快，建议错峰",
+    "就近 24 小时店备选：洪武餐厅 519m、汉中路餐厅 740m",
+    "APP 内先确认库存再出发；积分余额 48.6，可留意抢先购"
+  ],
+  "playbook": [
+    "定闹钟：10/15 10:40 积分抢先购，10:45 全面开售",
+    "提前把凑单品加好购物车，开售瞬间一键结算",
+    "周边是消费品，喜欢再冲，别为凑单点多一份"
+  ]
+}

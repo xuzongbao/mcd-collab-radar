@@ -80,6 +80,23 @@ calculate-price（换购路径 vs 加购路径 vs 麦金卡路径）→ render_c
 | **可持续适配** | 不绑定某一次联名——`campaign-calendar` 是活水源，新联名上线即自动纳入雷达 |
 | **自传播闭环** | 攻略卡自带项目地址，用户截图分享即为项目带来 Star，形成"分享 → 使用 → Star"闭环 |
 
+## 四点五、真实运行验证（2026-10-13）
+
+Skill 已在真实 Token 下端到端跑通，实际调用链：
+
+```
+now-time-info            → 2026-10-13 19:50:32（校准倒计时基准）
+campaign-calendar        → 定位 GD×PEACEMINUSONE 联名 + 三连弹日历（10/15 徽章、10/22 丝巾）
+query-my-account         → 可用积分 48.6
+query-nearby-stores      → 中国南京新街口 5 家门店（含 2 家 24 小时店）
+query-meals              → 南京新百餐厅(1990346) 全量菜单
+calculate-price ×2       → 圆筒冰淇淋 500 分；龙焰鸡腿堡三件套 2690 分
+mall-points-products     → 确认周边不在积分兑换列表（机制为换购）
+render_collab_card.py    → 生成含四路径实付对比的攻略卡
+```
+
+**验证中修正的一处认知**：联名周边并非积分兑换商品，而是「任意餐品消费 +39.9 元换购」——因此价梯账的优化目标是最小化凑单餐品价格（最低 ¥5 圆筒冰淇淋 → 到手 ¥44.9），而非攒积分。该结论已写入 `references/price-ladder.md`。
+
 ## 五、安全与合规
 
 - 本项目**真实调用**麦当劳中国官方 MCP Server，未做任何中间层代理或数据篡改

@@ -77,12 +77,30 @@ body {
 .m-right { text-align: right; }
 .m-right .price { font-size: 15px; font-weight: 800; color: #F4511E; }
 .m-right .tag { font-size: 10px; color: #fff; background: #F4511E; border-radius: 6px; padding: 1px 6px; margin-left: 4px; }
+.ladder {
+  margin: 0 16px 10px; background: #FFFFFF; border-radius: 16px; padding: 10px 14px;
+  border: 1px solid #FFE8DC;
+}
+.l-head, .l-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+.l-head { border-bottom: 1px solid #FFE8DC; }
+.l-head div { font-size: 10px; color: #C9A48F; font-weight: 700; }
+.l-row + .l-row { border-top: 1px dashed #FFE0D0; }
+.l-path { flex: 1.1; min-width: 0; font-size: 12px; color: #8C3A1E; font-weight: 700; }
+.l-food { flex: 1.6; min-width: 0; font-size: 11px; color: #6B4A38; }
+.l-note { flex: 1.3; min-width: 0; font-size: 10px; color: #B08872; }
+.l-total { flex-shrink: 0; font-size: 13px; font-weight: 800; color: #F4511E; }
+.l-row.best .l-path::after { content: " ★"; color: #F4511E; }
+.l-row.best { background: #FFF6EF; border-radius: 8px; }
 .tips {
   margin: 6px 16px 4px; background: #FFF8F2; border: 1px solid #FFE4D6;
   border-radius: 16px; padding: 12px 16px;
 }
 .tip { font-size: 12px; color: #7A4A30; line-height: 1.9; }
 .tip::before { content: "🎯 "; }
+.source {
+  margin: 4px 16px 8px; font-size: 10px; color: #A9846C; line-height: 1.6;
+  background: #FFF8F2; border: 1px dashed #FFD9C4; border-radius: 10px; padding: 8px 12px;
+}
 .footer { padding: 14px 20px 20px; text-align: center; }
 .footer .pb { font-size: 11px; color: #8C3A1E; font-weight: 700; line-height: 1.8; }
 .footer .src { font-size: 10px; color: #C9A48F; margin-top: 8px; line-height: 1.6; }
@@ -137,6 +155,36 @@ def render(plan: dict) -> str:
     tip_html = "".join(f'<div class="tip">{esc(t)}</div>' for t in tips)
     pb_html = "".join(f'<div class="tip">{esc(p)}</div>' for p in playbook)
 
+    # 价梯多路径实付对比（可选字段）
+    ladder = plan.get("price_ladder", [])
+    ladder_html = ""
+    if ladder:
+        best_total = min((l.get("total", "") for l in ladder), default="")
+        l_rows = []
+        for l in ladder:
+            cls = "l-row best" if l.get("total") == best_total and len(ladder) > 1 else "l-row"
+            l_rows.append(f"""
+      <div class="{cls}">
+        <div class="l-path">{esc(l.get('path', ''))}</div>
+        <div class="l-food">{esc(l.get('food', ''))} {esc(l.get('food_price', ''))}</div>
+        <div class="l-note">{esc(l.get('note', ''))}</div>
+        <div class="l-total">{esc(l.get('total', '—'))}</div>
+      </div>""")
+        ladder_html = f"""
+    <div class="section-title">🧮 四条路径实付对比</div>
+    <div class="ladder">
+      <div class="l-head">
+        <div class="l-path">路径</div>
+        <div class="l-food">凑单餐品</div>
+        <div class="l-note">说明</div>
+        <div class="l-total">到手价</div>
+      </div>
+      {''.join(l_rows)}
+    </div>"""
+
+    source = esc(plan.get("data_source", ""))
+    source_html = f'<div class="source">📡 数据来源：{source}</div>' if source else ""
+
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -160,10 +208,12 @@ def render(plan: dict) -> str:
     {''.join(w_rows)}
     <div class="section-title">💰 价梯（到手价）</div>
     <div class="merch">{''.join(m_rows)}</div>
+    {ladder_html}
     <div class="section-title">📍 渠道策略</div>
     <div class="tips">{tip_html}</div>
     <div class="section-title">📌 攻略要点</div>
     <div class="tips">{pb_html}</div>
+    {source_html}
     <div class="footer">
       <div class="pb">由「麦麦联名雷达」生成 · 基于麦当劳中国官方 MCP 能力<br>
       非麦当劳官方产品 · 周边为消费品，不建议囤积炒作</div>
